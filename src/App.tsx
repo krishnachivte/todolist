@@ -54,12 +54,12 @@ function App() {
 
 
   return (
-    <div className="container-xl w-screen h-screen flex flex-col">
+    <div className="container-xl  w-screen  h-screen flex flex-col">
         {error && <div className='p-2 bg-red-400 text-center text-red-900'>{error}</div>}
-      <div className='bg-pink-400  h-1/4 w-full flex justify-center items-center'>
+      <div className='bg-pink-400  h-1/4 w-full flex justify-center items-center p-2'>
 
           <input type='text' name='note' value={item} placeholder='type a todo item...' 
-            className='w-1/3 outline-none rounded p-2 mr-2' onChange={handleitem}
+            className='sm:w-1/3 xs:w-1/3 outline-none rounded p-2 mr-2 w-3/5' onChange={handleitem}
           />
           <button type='submit' 
           className='p-2 rounded bg-red-500 hover:bg-green-500 text-white'
@@ -67,7 +67,7 @@ function App() {
           >Add Item</button>
       </div>
 
-      <div className='bg-gray-600 h-full w-full flex flex-col items-center pt-4 '>
+      <div className='bg-gray-600 h-full w-full flex flex-col items-center pt-4 overflow-y-auto'>
           {listitems.length > 0 && listitems.map((element,index) => (
             <div key={index} className='flex w-full justify-center items-center'>
               <div className={`my-2 bg-white p-2 w-1/2 flex-wrap capitalize ${element.completed && 'line-through'}`}>{element.data}</div>
