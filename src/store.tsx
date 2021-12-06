@@ -29,6 +29,20 @@ class TodoStore{
         this.listitems = filtereditems;
     }
 
+    handlecomplete(elem: number){
+    console.log('checked ',elem)
+    const updatedlist:Todo[] = [...this.listitems].map((dat) => {
+      if(dat.id === elem){
+        dat.completed = !dat.completed
+      }
+      return dat
+    })
+    
+    this.listitems = updatedlist;
+    this.sort = false;
+    console.log('last')
+  }
+
     // handlesort(): void{
     //     if(!this.sort){
     //         const sorteditems: Todo[] =this.listitems.sort(function(a, b){

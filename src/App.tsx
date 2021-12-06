@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { Listing } from './Listing';
+import Listing  from './Listing';
 import store from './store';
 import {Todo} from './store';
 
