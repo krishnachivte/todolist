@@ -106,10 +106,10 @@ function App() {
           <div 
             className='absolute bottom-0 left-3/7 transform 
             translate-x translate-y-1/2 z-2 bg-black text-white 
-            px-2 py-1 cursor-pointer rounded'
+            px-2 py-0 cursor-pointer rounded'
             onClick={() => handlesort()}
             >
-              {store.sort ? 'sorted' :'sort by completed'}
+              {store.sort ? 'Sorted' :'Sort by completed'}
           </div>
 
       </div>
