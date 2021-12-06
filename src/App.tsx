@@ -15,7 +15,6 @@ function App() {
   const [error, seterror] = useState<string | null>(null);
   const [sort, setsort] = useState<boolean>(false);
   const [searchvalue, setsearchvalue] = useState<string>('');
-  const [iterate, setiterate] = useState<Todo[]>([])
 
 
   const handleitem = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,7 +51,6 @@ function App() {
   }
 
   const handledelete = (element: number): void => {
-    console.log('here ist si ',element)
     setlistitems(listitems.filter(ele => ele.id !== element))
   }
 
@@ -74,12 +72,6 @@ function App() {
   const handlesearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value)
     setsearchvalue(e.target.value);
-    // let originaldata: Todo[] = listitems;
-    // if(!e.target.value){
-    //   setlistitems(originaldata)
-    // }
-    // const filtereddata: Todo[] = listitems.filter(ele => ele.data.toLowerCase().includes(e.target.value.toLowerCase()))
-    // setlistitems(filtereddata)
   }
 
   return (
@@ -92,12 +84,6 @@ function App() {
             className='sm:w-1/3 xs:w-1/3 outline-none rounded p-1  w-3/5' 
             onChange={handlesearch}
           />
-          {/* <span 
-            className='p-1 rounded rounded-bl-none rounded-tl-none 
-            bg-gray-500 hover:bg-green-500 text-white'
-            >
-              search
-          </span> */}
 
           </div>
           <div className=' w-full flex justify-center items-center p-2'>
@@ -130,6 +116,8 @@ function App() {
               return val
             }else if(val.data.toLowerCase().includes(searchvalue)){
               return val
+            }else{
+              return null
             }
           }).map((element,index) => (
             <div key={index} className='flex w-full justify-center items-center'>
